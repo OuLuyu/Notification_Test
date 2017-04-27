@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: notificationService Maven Webapp
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Hsin
+Built-By: ezScrum
 Implementation-Vendor-Id: ezScrum.service
 Build-Jdk: 1.8.0_131
 Implementation-URL: http://maven.apache.org
