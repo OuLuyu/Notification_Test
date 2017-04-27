@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.eclipse.jetty.server.nio.NetworkTrafficSelectChannelConnector;
+import org.eclipse.jetty.server.nio.SelectChannelConnector;
 import ntut.csie.service.core.ServiceConfiguration;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -31,9 +31,8 @@ public class NotificationConfiguration {
 	}
 	
 	@Bean
-	public NetworkTrafficSelectChannelConnector conneter(){
-		@SuppressWarnings("deprecation")
-		NetworkTrafficSelectChannelConnector ntscc = new NetworkTrafficSelectChannelConnector();
+	public SelectChannelConnector conneter(){
+		SelectChannelConnector ntscc = new SelectChannelConnector();
 		ntscc.setPort(mconfig.getServerPort());
 		return ntscc;
 	}
