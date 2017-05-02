@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ntut.csie.controller.connectOtherServiceController;
 import ntut.csie.model.MessageModel;
+import ntut.csie.restful.security.ServerSecurity;
 
 import java.util.*;
 
@@ -22,6 +23,8 @@ public class MessageRestful {
 	@ResponseBody
 	public boolean getMessage(@RequestBody String data){
 		MessageModel mm = new MessageModel(data);
+		if (!ServerSecurity.isEzscrumServer(mm.getVerification()))
+			return false;
 		List<String> AccountsId = mcosc.GetAccountsIdByProjectId(mm.getProjectId());
 		return true;
 	}

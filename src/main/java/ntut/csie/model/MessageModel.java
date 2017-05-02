@@ -11,6 +11,7 @@ public class MessageModel {
 	private String messageBody;
 	private String fromService;
 	private String jumpUrl;
+	private String verification;
 	
 	public MessageModel(String data){
 		try{
@@ -20,6 +21,7 @@ public class MessageModel {
 			messageBody = j.getJSONObject("message").getString("body");
 			fromService = j.getJSONObject("service").getString("name");
 			jumpUrl = j.getJSONObject("service").getString("jumpUrl");
+			verification = j.getJSONObject("service").getString("verification");
 		}catch(JSONException e){
 			
 		}
