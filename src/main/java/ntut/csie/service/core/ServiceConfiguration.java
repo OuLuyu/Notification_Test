@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import org.json.*;
 
 public class ServiceConfiguration {
 	private Properties properties;
@@ -20,6 +21,13 @@ public class ServiceConfiguration {
 	private final String DATABASE_NAME = "DatabaseName";
 	private final String ACCOUNTMANAGEMENT_URL = "AccountManagementServiceURL";
 	private final String ACCOUNTMANAGEMENT_PORT = "AccountManagementServicePort";
+	//FCM
+	private final String APIKEY = "ApiKey";
+	private final String AUTHDOMAIN = "AuthDomain";
+	private final String FCMDATABASEURL = "FCMDatabaseURL";
+	private final String FCMPROJECTID = "FCMProjectId";
+	private final String STORAGEBUCKET = "StorageBucket";
+	private final String MESSAGINSENDERID = "MessagingSenderId";
 	
 	public ServiceConfiguration(){
 		init();
@@ -85,5 +93,16 @@ public class ServiceConfiguration {
 	
 	public String getAccountManagementPort() {
 		return properties.getProperty(ACCOUNTMANAGEMENT_PORT);
+	}
+	
+	public JSONObject getFCM() throws JSONException{
+		JSONObject FCM = new JSONObject();
+		FCM.put("apiKey", properties.getProperty(APIKEY));
+		FCM.put("authDomain", properties.getProperty(AUTHDOMAIN));
+		FCM.put("databaseURL", properties.getProperty(FCMDATABASEURL));
+		FCM.put("projectId", properties.getProperty(FCMPROJECTID));
+		FCM.put("storageBucket", properties.getProperty(STORAGEBUCKET));
+		FCM.put("messagingSenderId", properties.getProperty(MESSAGINSENDERID));
+		return FCM;
 	}
 }
