@@ -9,7 +9,5 @@ public class SubscriberDAO {
 			sInstance = new SubscriberDAO();
 		}
 		return sInstance;
-	}
-	
-	
+	}	
 }
