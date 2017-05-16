@@ -1,8 +1,11 @@
 <html>
+<head>
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+</head>
 <body>
-<button onclick="notifyMe()">Test Push</button>
+	<button id="NotificationButton" onclick="notifyMe()">Test Notification</button>
+	<h1 id="one"></h1>
 </body>
 
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 <script src="./resources/Initialize/NotificationInit.js"></script>
 </html>
