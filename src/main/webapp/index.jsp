@@ -4,6 +4,7 @@
 </head>
 <body>
 	<button id="NotificationButton" onclick="notifyMe()">Test Notification</button>
+	<button id="FCMButton" onclick="SendMessaging()">Test FCM</button>
 	<h1 id="one"></h1>
 </body>
 
