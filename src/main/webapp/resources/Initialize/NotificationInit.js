@@ -53,7 +53,8 @@ messaging.requestPermission()
 
 messaging.onMessage(function(payload){
 	var option = {
-			body: payload.notification.body
+			body: payload.notification.body,
+			icon: payload.notification.icon
 	}
     var notification = new Notification(payload.notification.title,option);
 	console.log('onMessage:', payload );
@@ -63,8 +64,9 @@ function SendMessaging(){
 	var payload = {
 			"to" : _token,
 			"notification":{
-				"title":"WOWWWWWW~",
-				"body":"It's work."
+				"title":"project : ezScrum",
+				"body":"Task #12 to done.",
+				"icon":"/icon/scrum_16.png"
 			}
 	}
 	
@@ -72,8 +74,5 @@ function SendMessaging(){
 	xhttp.open("POST", "https://fcm.googleapis.com/fcm/send", true);
 	xhttp.setRequestHeader('Content-Type', 'application/json');
 	xhttp.setRequestHeader('Authorization', 'key=AAAALeDdRM4:APA91bHDg36wwcKhafIlP4A6eRpzFtqTL0MvjOQPYicW1wnoVClieKmGZeRNKABkqG3e4We0cGXnDBJ_zD2lWMI6BhFLL_NRlXmpYm8oZux5IoKiGauN7K9YJhc__xI4cW-BXl6AKlwd');
-	
 	xhttp.send(JSON.stringify(payload));
-//	var response = JSON.parse(xhttp.responseText);
-	
 }
