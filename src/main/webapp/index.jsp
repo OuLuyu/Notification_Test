@@ -5,8 +5,9 @@
 <body>
 	<button id="NotificationButton" onclick="notifyMe()">Test Notification</button>
 	<button id="FCMButton" onclick="SendMessaging()">Test FCM</button>
-	<h1 id="one"></h1>
+	
+	<button id="subscription_Button" onclick="subscript()">Test connect</button>
 </body>
 
-<script src="./resources/Initialize/NotificationInit.js"></script>
+<script src="./javaScript/Initialize/NotificationInit.js">subscript</script>
 </html>

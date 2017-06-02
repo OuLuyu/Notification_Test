@@ -76,3 +76,12 @@ function SendMessaging(){
 	xhttp.setRequestHeader('Authorization', 'key=AAAALeDdRM4:APA91bHDg36wwcKhafIlP4A6eRpzFtqTL0MvjOQPYicW1wnoVClieKmGZeRNKABkqG3e4We0cGXnDBJ_zD2lWMI6BhFLL_NRlXmpYm8oZux5IoKiGauN7K9YJhc__xI4cW-BXl6AKlwd');
 	xhttp.send(JSON.stringify(payload));
 }
+
+function subscript(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "/ntut/csie/dao/SubsriberDAO/subscribe", true);
+	xhttp.send(JSON.stringify(payload));
+	/*$.ajax({
+		method:""
+	});*/
+}
