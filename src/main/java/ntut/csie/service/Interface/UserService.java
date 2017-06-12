@@ -1,17 +1,18 @@
 package ntut.csie.service.Interface;
 
-import ntut.csie.model.User;
+import ntut.csie.model.Subscriber;
 
 import java.util.List;
 
 public interface UserService {
-	User findUserByUsername(String username);
+	Subscriber findUserByUsername(String username);
 	
-	List<User> getUserList();
+	List<Subscriber> getUserList();
 	
-	String delete(Long id);
+	void delete(Long id);
 	
-	String save(User user);
+	Subscriber save(Subscriber user);
 	
-	User findUserById(Long id);
+	Subscriber findUserById(Long id);
+	
 }

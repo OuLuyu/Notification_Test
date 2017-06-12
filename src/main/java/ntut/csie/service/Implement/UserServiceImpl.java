@@ -1,39 +1,41 @@
 package ntut.csie.service.Implement;
 
-import ntut.csie.model.User;
-import ntut.csie.service.Interface.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ntut.csie.dao.UserRepository;
+import ntut.csie.model.Subscriber;
+import ntut.csie.service.Interface.UserService;
+
+
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
+	@Autowired
+	private UserRepository userRepository;
 	
-	@Override
-	public User findUserByUsername(String username){
-		
+	
+	public Subscriber findUserByUsername(String username){
+		return userRepository.findByUsername(username);
 	}
 	
-	@Override
-	public List<User> getUserList(){
-		
+	public List<Subscriber> getUserList(){
+		return userRepository.findAll();
 	}
 	
-	@Override
-	public String delete(Long id){
-		
+	public void delete(Long id) {
+		userRepository.delete(id);
 	}
 	
-	@Override
-	public String save(User user){
-		
+	public Subscriber save(Subscriber user){
+		Subscriber us = new Subscriber();
+        us.setUsername(user.getUsername());
+
+        return userRepository.save(us);
 	}
 	
-	@Override
-	public User findUserById(Long id){
-		
+	public Subscriber findUserById(Long id){
+		return userRepository.findOne(id);
 	}
 }

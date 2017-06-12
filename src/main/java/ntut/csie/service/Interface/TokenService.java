@@ -7,7 +7,7 @@ public interface TokenService {
 	
 	Token getTokenByTokenString(String tokenString);
 	
-	String delete(Long Id);
+	void delete(Long Id);
 	
-	String create(Token token);
+	Token create(Token token);
 }
